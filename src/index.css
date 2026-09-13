@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-serif: 'Playfair Display', 'Cormorant Garamond', serif;
+  --font-display: 'Cormorant Garamond', 'Playfair Display', serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-ink: #1e140c;
+  --color-brown-900: #241609;
+  --color-brown-800: #3a230f;
+  --color-brown-700: #573419;
+  --color-brown-600: #7a4f28;
+
+  --color-gold-700: #7d5a2e;
+  --color-gold-600: #96733c;
+  --color-gold-500: #ae8b52;
+  --color-gold-400: #c3a468;
+  --color-gold-300: #d7bf8c;
+  --color-gold-200: #e6d6ae;
+
+  --color-ivory-50: #fdfaf4;
+  --color-ivory-100: #f8f1e4;
+  --color-cream-200: #efe3c8;
+  --color-beige-300: #e2d2ab;
+
+  --animate-slow-spin: spin 90s linear infinite;
+  --animate-slower-spin: spin 140s linear infinite reverse;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-ivory-50);
+    color: var(--color-brown-900);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  #root {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  a,
+  button {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-500);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer utilities {
+  .gold-rule {
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--color-gold-400) 50%,
+      transparent
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

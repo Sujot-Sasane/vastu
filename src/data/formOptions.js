@@ -1,0 +1,15 @@
+export const serviceOptions = [
+  'Residential Vastu',
+  'Commercial Vastu',
+  'Property Purchase Consultation',
+  'Aura Scanning',
+  'Chakra Balancing',
+  'Astrology / Kundli Analysis',
+  'Numerology',
+  'Gemstone Guidance',
+  'Logo Design (Numerology)',
+  'Family Counseling & Coaching',
+  'Combo Package',
+  'Certification Program',
+  'Other',
+]
