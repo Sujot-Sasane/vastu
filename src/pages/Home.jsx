@@ -1,12 +1,10 @@
-import { Link } from 'react-router-dom'
 import Hero from '../components/Hero'
 import Reveal from '../components/Reveal'
 import SectionHeading from '../components/SectionHeading'
-import ServiceCard from '../components/ServiceCard'
 import BenefitCard from '../components/BenefitCard'
 import CTASection from '../components/CTASection'
+import PracticeAreasOrbit from '../components/PracticeAreasOrbit'
 import { VastuGrid } from '../components/VastuMotif'
-import { services } from '../data/services'
 import { benefitGroups } from '../data/benefits'
 import { whyChooseUs } from '../data/whyChooseUs'
 
@@ -38,28 +36,7 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="bg-ivory-100 py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8">
-          <SectionHeading
-            eyebrow="What We Offer"
-            title="Our Practice Areas"
-            subtitle="Five integrated disciplines, brought together under one consultancy."
-          />
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service, i) => (
-              <ServiceCard key={service.id} service={service} delay={i * 0.08} />
-            ))}
-          </div>
-          <Reveal className="mt-14 flex justify-center">
-            <Link
-              to="/services"
-              className="rounded-full border border-gold-500 px-8 py-3 text-sm uppercase tracking-[0.16em] text-brown-900 transition-colors hover:bg-brown-900 hover:text-ivory-50"
-            >
-              View All Services
-            </Link>
-          </Reveal>
-        </div>
-      </section>
+      <PracticeAreasOrbit />
 
       {/* What You Will Gain */}
       <section className="py-24 sm:py-32">
