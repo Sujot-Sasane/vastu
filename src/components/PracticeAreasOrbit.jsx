@@ -51,10 +51,11 @@ function useMediaQuery(query) {
 export default function PracticeAreasOrbit() {
   const isLg = useMediaQuery('(min-width: 1024px)')
   const isSm = useMediaQuery('(min-width: 640px)')
+  const isXs = useMediaQuery('(min-width: 400px)')
   const prefersReducedMotion = useReducedMotion()
 
-  const radius = isLg ? 190 : isSm ? 150 : 95
-  const stageSize = isLg ? 560 : isSm ? 480 : 340
+  const radius = isLg ? 190 : isSm ? 150 : isXs ? 95 : 72
+  const stageSize = isLg ? 560 : isSm ? 480 : isXs ? 340 : 260
 
   const [rotation, setRotation] = useState(0)
   const [activeId, setActiveId] = useState(null)
