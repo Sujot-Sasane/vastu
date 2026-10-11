@@ -1,11 +1,7 @@
+import { Link } from 'react-router-dom'
 import Reveal from './Reveal'
-import {
-  IconVastu,
-  IconAstrology,
-  IconAura,
-  IconNumerology,
-  IconBusinessGrowth,
-} from './icons'
+import TiltCard from './TiltCard'
+import { IconVastu, IconAstrology, IconAura, IconNumerology, IconBusinessGrowth } from './icons'
 
 const iconMap = {
   vastu: IconVastu,
@@ -20,11 +16,21 @@ export default function ServiceCard({ service, delay = 0 }) {
 
   return (
     <Reveal delay={delay} className="h-full">
-      <div className="group flex h-full flex-col gap-5 rounded-sm border border-beige-300/70 bg-ivory-50 p-8 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-400 hover:shadow-[0_20px_40px_-24px_rgba(60,40,15,0.35)]">
-        <Icon className="h-9 w-9 text-gold-600 transition-transform duration-500 group-hover:scale-110" />
-        <h3 className="font-serif text-xl text-brown-900">{service.name}</h3>
-        <p className="text-sm leading-relaxed text-brown-700/90">{service.description}</p>
-      </div>
+      <TiltCard>
+      <Link
+        to="/services#fees"
+        className="group flex h-full flex-col gap-4 rounded-md border border-beige-300 bg-ivory-50 p-7 transition-all hover:-translate-y-1 hover:border-gold-500 hover:shadow-lg"
+      >
+        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brown-900 text-gold-300">
+          <Icon className="h-8 w-8" />
+        </span>
+        <h3 className="font-serif text-2xl text-brown-900">{service.name}</h3>
+        <p className="text-base leading-relaxed text-brown-800">{service.description}</p>
+        <span className="mt-auto text-base font-medium text-gold-700 group-hover:underline">
+          See fees &rarr;
+        </span>
+      </Link>
+      </TiltCard>
     </Reveal>
   )
 }

@@ -1,3 +1,4 @@
+import Seo from '../components/Seo'
 import Reveal from '../components/Reveal'
 import ContactForm from '../components/ContactForm'
 import { CompassMark } from '../components/VastuMotif'
@@ -7,6 +8,7 @@ import { contact } from '../data/contact'
 export default function Contact() {
   return (
     <>
+      <Seo path="/contact" />
       <section className="relative overflow-hidden bg-brown-900 pb-20 pt-36 text-ivory-50 sm:pb-24 sm:pt-44">
         <CompassMark className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 text-gold-300/25 sm:h-96 sm:w-96" />
         <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
@@ -65,8 +67,8 @@ export default function Contact() {
           <Reveal delay={0.1}>
             <div className="rounded-sm border border-beige-300/70 bg-white/50 p-7 sm:p-10">
               <h2 className="font-serif text-2xl text-brown-900">Send Us a Message</h2>
-              <p className="mt-2 text-sm text-brown-700/85">
-                Share a few details and we will reach out to schedule your consultation.
+              <p className="mt-2 text-base text-brown-800">
+                Fill in your details and your message opens in WhatsApp, ready to send.
               </p>
               <div className="mt-8">
                 <ContactForm />
@@ -82,7 +84,7 @@ export default function Contact() {
 function ContactBlock({ label, children }) {
   return (
     <div>
-      <p className="text-xs uppercase tracking-[0.2em] text-gold-700">{label}</p>
+      <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gold-700">{label}</p>
       <div className="mt-2">{children}</div>
     </div>
   )

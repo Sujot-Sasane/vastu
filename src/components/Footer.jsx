@@ -16,16 +16,16 @@ export default function Footer() {
 
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-gold-300">Practice Areas</p>
-            <ul className="mt-4 space-y-2 text-sm text-ivory-100/85">
+            <ul className="mt-4 space-y-2 text-base text-ivory-100">
               {services.map((s) => (
-                <li key={s.id}>{s.name.toUpperCase()}</li>
+                <li key={s.id}>{s.name}</li>
               ))}
             </ul>
           </div>
 
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-gold-300">Navigate</p>
-            <ul className="mt-4 space-y-2 text-sm text-ivory-100/85">
+            <ul className="mt-4 space-y-2 text-base text-ivory-100">
               <li>
                 <Link to="/" className="hover:text-gold-300">
                   Home
@@ -33,7 +33,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link to="/services" className="hover:text-gold-300">
-                  Services &amp; Pricing
+                  Services &amp; Fees
                 </Link>
               </li>
               <li>
@@ -46,10 +46,15 @@ export default function Footer() {
 
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-gold-300">Contact</p>
-            <ul className="mt-4 space-y-2 text-sm text-ivory-100/85">
+            <ul className="mt-4 space-y-2 text-base text-ivory-100">
               <li>
                 <a href={`tel:${contact.phoneTel}`} className="hover:text-gold-300">
                   {contact.phoneDisplay}
+                </a>
+              </li>
+              <li>
+                <a href={`https://wa.me/${contact.whatsappNumber}`} className="hover:text-gold-300">
+                  WhatsApp us
                 </a>
               </li>
               <li>{contact.location}</li>
@@ -59,7 +64,7 @@ export default function Footer() {
 
         <div className="gold-rule mt-12 opacity-40" />
 
-        <div className="mt-8 flex flex-col gap-4 text-xs text-ivory-100/70 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-8 flex flex-col gap-4 text-sm text-ivory-100 sm:flex-row sm:items-center sm:justify-between">
           <p className="max-w-xl">{disclaimer}</p>
           <p className="font-display text-sm italic text-gold-300">{brandLine}</p>
         </div>

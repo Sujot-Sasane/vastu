@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom'
 
 const links = [
   { to: '/', label: 'Home' },
-  { to: '/services', label: 'Services & Pricing' },
+  { to: '/services', label: 'Services & Fees' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -54,7 +54,7 @@ export default function Navbar() {
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                `text-sm uppercase tracking-[0.14em] transition-colors duration-500 ${
+                `text-base font-medium tracking-[0.02em] transition-colors duration-500 ${
                   scrolled
                     ? isActive
                       ? 'text-gold-700'

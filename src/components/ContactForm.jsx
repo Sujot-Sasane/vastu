@@ -3,7 +3,7 @@ import Reveal from './Reveal'
 import { serviceOptions } from '../data/formOptions'
 import { contact } from '../data/contact'
 
-const initialState = { name: '', phone: '', email: '', service: '', message: '' }
+const initialState = { name: '', phone: '', service: '', message: '' }
 
 export default function ContactForm() {
   const [form, setForm] = useState(initialState)
@@ -16,13 +16,14 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    const subject = encodeURIComponent(
-      `Consultation enquiry — ${form.service || 'General'}`
-    )
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nService: ${form.service}\n\n${form.message}`
-    )
-    window.location.href = `mailto:?subject=${subject}&body=${body}`
+    const text = `Hello SUKH VASTU, I would like to book a consultation.
+
+Name: ${form.name}
+Phone: ${form.phone}
+Service: ${form.service || 'General enquiry'}
+${form.message ? `
+Message: ${form.message}` : ''}`
+    window.open(`https://wa.me/${contact.whatsappNumber}?text=${encodeURIComponent(text)}`, '_blank', 'noopener')
     setStatus('sent')
   }
 
@@ -55,19 +56,6 @@ export default function ContactForm() {
             />
           </Field>
         </div>
-
-        <Field label="Email Address" htmlFor="email">
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-            autoComplete="email"
-            className={inputClasses}
-          />
-        </Field>
 
         <Field label="Service Interested In" htmlFor="service">
           <select
@@ -104,12 +92,12 @@ export default function ContactForm() {
           type="submit"
           className="w-full rounded-full border border-gold-500 bg-brown-900 px-8 py-4 text-sm uppercase tracking-[0.16em] text-ivory-50 transition-colors hover:bg-gold-500 hover:text-brown-900 sm:w-auto"
         >
-          Submit Enquiry
+          Send on WhatsApp
         </button>
 
-        <p role="status" className="text-sm text-brown-700/80">
+        <p role="status" className="text-base text-brown-800">
           {status === 'sent'
-            ? `Thank you — your email app should now open. You can also reach us directly at ${contact.phoneDisplay}.`
+            ? `WhatsApp should now open with your details. You can also call us directly on ${contact.phoneDisplay}.`
             : ''}
         </p>
       </form>
@@ -123,7 +111,7 @@ const inputClasses =
 function Field({ label, htmlFor, children }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={htmlFor} className="text-xs uppercase tracking-[0.16em] text-brown-700">
+      <label htmlFor={htmlFor} className="text-sm font-medium text-brown-900">
         {label}
       </label>
       {children}
