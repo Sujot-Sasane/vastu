@@ -4,17 +4,17 @@ import { faqs } from '../data/faq'
 
 export default function FAQ() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-24 sm:py-32">
       <div className="mx-auto max-w-3xl px-5 sm:px-8">
         <SectionHeading eyebrow="Questions" title="Frequently Asked Questions" />
-        <Reveal className="mt-12 divide-y divide-beige-300 rounded-md border border-beige-300 bg-white/70">
+        <Reveal className="mt-14 space-y-3">
           {faqs.map((item) => (
-            <details key={item.q} className="group p-5 sm:p-6">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-brown-900">
+            <details key={item.q} className="card group p-5 transition-shadow open:shadow-lg sm:p-6">
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-semibold text-deep-900">
                 {item.q}
-                <span className="shrink-0 text-2xl text-gold-700 transition-transform group-open:rotate-45" aria-hidden="true">+</span>
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-saffron-200/60 text-xl text-saffron-700 transition-transform group-open:rotate-45" aria-hidden="true">+</span>
               </summary>
-              <p className="mt-3 text-base leading-relaxed text-brown-800">{item.a}</p>
+              <p className="mt-3 pr-10 text-base leading-relaxed text-deep-700">{item.a}</p>
             </details>
           ))}
         </Reveal>

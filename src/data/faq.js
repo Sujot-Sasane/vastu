@@ -18,7 +18,7 @@ export const faqs = [
   },
   {
     q: 'What is the difference between Basic, Advanced and Devta Vastu?',
-    a: 'They are the three levels of residential Vastu we offer for 1, 2 and 3 BHK homes. Call or WhatsApp us on 84212 64777 and we will help you choose the right one for your home.',
+    a: 'They are the three levels of residential Vastu we offer for 1, 2 and 3 BHK homes. Call or WhatsApp us on 70309 25038 and we will help you choose the right one for your home.',
   },
   {
     q: 'Can I learn Vastu and start my own practice?',

@@ -2,7 +2,7 @@ import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } fro
 
 // 3D tilt-on-hover with a moving light glare. Falls back to a plain wrapper
 // for reduced-motion users and touch devices (no hover = no tilt).
-export default function TiltCard({ children, className = '', max = 7 }) {
+export default function TiltCard({ children, className = '', max = 5 }) {
   const reduce = useReducedMotion()
   const px = useMotionValue(0.5)
   const py = useMotionValue(0.5)
@@ -35,13 +35,13 @@ export default function TiltCard({ children, className = '', max = 7 }) {
         onPointerLeave={onLeave}
         style={{ rotateX, rotateY, transformStyle: 'preserve-3d' }}
         whileHover={{ scale: 1.02 }}
-        className="relative h-full rounded-md"
+        className="relative h-full rounded-[1.25rem]"
       >
         {children}
         <motion.span
           aria-hidden="true"
           style={{ background: glare }}
-          className="pointer-events-none absolute inset-0 rounded-md opacity-0 mix-blend-soft-light transition-opacity duration-300 [div:hover>&]:opacity-100"
+          className="pointer-events-none absolute inset-0 rounded-[1.25rem] opacity-0 mix-blend-soft-light transition-opacity duration-300 [div:hover>&]:opacity-100"
         />
       </motion.div>
     </div>

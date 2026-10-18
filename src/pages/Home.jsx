@@ -22,19 +22,19 @@ export default function Home() {
       <Marquee />
 
       {/* Editorial introduction */}
-      <section className="relative overflow-hidden py-20 sm:py-28">
-        <VastuGrid className="pointer-events-none absolute -right-32 top-1/2 h-[560px] w-[560px] -translate-y-1/2 text-gold-500/10" />
+      <section className="relative overflow-hidden py-24 sm:py-36">
+        <VastuGrid className="pointer-events-none absolute -right-32 top-1/2 h-[560px] w-[560px] -translate-y-1/2 text-saffron-500/15" />
         <div className="relative mx-auto grid max-w-6xl gap-12 px-6 sm:px-8 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <Reveal>
-            <h2 className="font-serif text-3xl leading-tight text-brown-900 sm:text-4xl lg:text-5xl">
+            <h2 className="font-serif text-4xl leading-[1.08] text-deep-900 sm:text-5xl lg:text-6xl">
               Ancient Wisdom.
               <br />
-              Modern Living.
+              <span className="italic text-saffron-600">Modern Living.</span>
             </h2>
-            <div className="gold-rule mt-6 w-16" />
+            <div className="accent-rule mt-8 w-12" />
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="text-balance text-lg leading-relaxed text-brown-800 sm:text-xl">
+            <p className="text-balance text-lg leading-[1.8] text-deep-700 sm:text-xl lg:pt-3">
               At SUKH VASTU in Pune, Maharashtra, we combine the ancient sciences of Vastu Shastra, Astrology, Aura
               Analysis, Numerology, and Energy Balancing to help individuals, families, and
               businesses create harmony, clarity, and positive growth.
@@ -44,22 +44,22 @@ export default function Home() {
       </section>
 
       {/* Services */}
-      <section className="bg-ivory-100 py-20 sm:py-28">
+      <section className="bg-ivory-100 py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="What We Offer"
             title="Our Services"
             subtitle="Five connected disciplines under one roof. Select any to see fees."
           />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service, i) => (
               <ServiceCard key={service.id} service={service} delay={i * 0.06} />
             ))}
           </div>
-          <div className="mt-12 text-center">
+          <div className="mt-14 text-center">
             <Link
               to="/services"
-              className="inline-block rounded-full bg-brown-900 px-8 py-4 text-base font-semibold text-ivory-50 hover:bg-gold-600"
+              className="inline-block rounded-full bg-deep-900 px-8 py-4 text-base font-semibold text-ivory-50 shadow-lg shadow-deep-900/20 transition-all hover:-translate-y-0.5 hover:bg-deep-800"
             >
               View All Services &amp; Fees
             </Link>
@@ -68,7 +68,7 @@ export default function Home() {
       </section>
 
       {/* What You Will Gain */}
-      <section className="py-20 sm:py-28">
+      <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             eyebrow="Outcomes"
@@ -84,23 +84,24 @@ export default function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="bg-brown-900 py-24 text-ivory-50 sm:py-32">
+      <section className="bg-deep-900 py-28 text-ivory-50 sm:py-36">
         <div className="mx-auto max-w-6xl px-6 sm:px-8">
           <SectionHeading
             eyebrow="Why Sukh Vastu"
             title="Why Choose Us"
+            dark
             className="[&_h2]:text-ivory-50 [&_p]:text-ivory-100/80"
           />
-          <div className="mt-16 grid gap-px overflow-hidden rounded-sm border border-gold-500/25 bg-gold-500/10 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((item) => (
               <div
                 key={item.title}
-                className="group bg-brown-900 p-8 transition-colors duration-500 hover:bg-brown-800"
+                className="group rounded-[1.25rem] border border-ivory-100/10 bg-ivory-50/[0.04] p-8 transition-colors duration-500 hover:border-saffron-400/40 hover:bg-ivory-50/[0.07]"
               >
-                <h3 className="font-serif text-xl text-gold-300 transition-transform duration-500 group-hover:-translate-y-0.5">
+                <h3 className="font-serif text-xl text-saffron-300 transition-transform duration-500 group-hover:-translate-y-0.5">
                   {item.title}
                 </h3>
-                <p className="mt-2 text-base text-ivory-100">{item.description}</p>
+                <p className="mt-3 text-base leading-relaxed text-ivory-100/75">{item.description}</p>
               </div>
             ))}
           </div>

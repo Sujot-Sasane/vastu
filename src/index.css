@@ -1,27 +1,30 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-serif: 'Lora', Georgia, serif;
-  --font-display: 'Lora', Georgia, serif;
-  --font-sans: 'Noto Sans', system-ui, sans-serif;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
 
-  --color-ink: #1e140c;
-  --color-brown-900: #241609;
-  --color-brown-800: #3a230f;
-  --color-brown-700: #573419;
-  --color-brown-600: #7a4f28;
+  /* Deep indigo — night sky, used for dark sections and primary text */
+  --color-ink: #0c0f24;
+  --color-deep-900: #151935;
+  --color-deep-800: #252a52;
+  --color-deep-700: #383e70;
+  --color-deep-600: #4d548f;
 
-  --color-gold-700: #7d5a2e;
-  --color-gold-600: #96733c;
-  --color-gold-500: #ae8b52;
-  --color-gold-400: #c3a468;
-  --color-gold-300: #d7bf8c;
-  --color-gold-200: #e6d6ae;
+  /* Saffron — the accent */
+  --color-saffron-700: #a14b08;
+  --color-saffron-600: #c25f10;
+  --color-saffron-500: #e57c1f;
+  --color-saffron-400: #f09440;
+  --color-saffron-300: #f7b56e;
+  --color-saffron-200: #fcdcb5;
 
-  --color-ivory-50: #fdfaf4;
-  --color-ivory-100: #f8f1e4;
-  --color-cream-200: #efe3c8;
-  --color-beige-300: #e2d2ab;
+  /* Warm paper neutrals */
+  --color-ivory-50: #fbf8f3;
+  --color-ivory-100: #f4eee4;
+  --color-cream-200: #efe5d5;
+  --color-beige-300: #e4d9c7;
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-rise: rise 12s ease-in infinite;
@@ -72,10 +75,10 @@
   body {
     margin: 0;
     background-color: var(--color-ivory-50);
-    color: var(--color-brown-900);
+    color: var(--color-deep-900);
     font-family: var(--font-sans);
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -90,9 +93,9 @@
   h3,
   h4 {
     font-family: var(--font-serif);
-    font-weight: 600;
-    letter-spacing: 0;
-    line-height: 1.25;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
   }
 
   a,
@@ -101,7 +104,7 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-gold-500);
+    outline: 2px solid var(--color-saffron-500);
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -109,7 +112,7 @@
 
 @layer utilities {
   .text-shimmer {
-    background: linear-gradient(90deg, var(--color-ivory-50) 0%, var(--color-gold-300) 25%, var(--color-ivory-50) 50%, var(--color-gold-300) 75%, var(--color-ivory-50) 100%);
+    background: linear-gradient(90deg, var(--color-ivory-50) 0%, var(--color-saffron-300) 25%, var(--color-ivory-50) 50%, var(--color-saffron-300) 75%, var(--color-ivory-50) 100%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;
@@ -132,14 +135,44 @@
     transition: transform 0.7s ease;
   }
 
-  .gold-rule {
-    height: 1px;
-    background: linear-gradient(
-      90deg,
-      transparent,
-      var(--color-gold-400) 50%,
-      transparent
-    );
+  .accent-rule {
+    height: 3px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, var(--color-saffron-500), var(--color-saffron-300));
+  }
+
+  /* Small pill label above section titles */
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid color-mix(in srgb, var(--color-saffron-500) 30%, transparent);
+    background: color-mix(in srgb, var(--color-saffron-200) 45%, transparent);
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--color-saffron-700);
+  }
+  .eyebrow::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 9999px;
+    background: var(--color-saffron-500);
+  }
+  .eyebrow-dark {
+    border-color: color-mix(in srgb, var(--color-saffron-300) 35%, transparent);
+    background: color-mix(in srgb, var(--color-saffron-300) 12%, transparent);
+    color: var(--color-saffron-300);
+  }
+
+  .card {
+    border-radius: 1.25rem;
+    border: 1px solid color-mix(in srgb, var(--color-beige-300) 80%, transparent);
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(21, 25, 53, 0.04), 0 8px 24px -12px rgba(21, 25, 53, 0.12);
   }
 
   .text-balance {

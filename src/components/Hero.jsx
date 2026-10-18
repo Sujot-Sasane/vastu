@@ -20,14 +20,14 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex h-[100svh] min-h-[640px] w-full items-center overflow-hidden bg-brown-900"
+      className="relative flex h-[100svh] min-h-[640px] w-full items-center overflow-hidden bg-deep-900"
     >
       <motion.div style={{ y: backdropY }} className="absolute inset-0 h-full w-full">
         <HeroBackdrop />
       </motion.div>
 
       <div
-        className="absolute inset-0 bg-gradient-to-b from-brown-900/80 via-brown-900/55 to-brown-900/90"
+        className="absolute inset-0 bg-gradient-to-b from-ink/85 via-deep-900/55 to-ink/95"
         aria-hidden="true"
       />
       <div
@@ -36,23 +36,23 @@ export default function Hero() {
       />
 
       <GoldDust />
-      <CompassMark className="pointer-events-none absolute -right-16 top-1/4 h-64 w-64 text-gold-300/40 sm:h-80 sm:w-80" />
-      <VastuGrid className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 text-gold-300/25 sm:h-96 sm:w-96" />
+      <CompassMark className="pointer-events-none absolute -right-16 top-1/4 h-64 w-64 text-saffron-300/40 sm:h-80 sm:w-80" />
+      <VastuGrid className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 text-saffron-300/25 sm:h-96 sm:w-96" />
 
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
-        className="relative z-10 mx-auto w-full max-w-5xl px-6 pt-24 text-center sm:px-8"
+        className="relative z-10 mx-auto w-full max-w-5xl px-5 pt-20 text-center sm:px-8 sm:pt-24"
       >
         <motion.span
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-6 inline-block text-xs uppercase tracking-[0.35em] text-gold-300"
+          className="eyebrow eyebrow-dark mb-7 max-w-full justify-center rounded-2xl text-center text-xs leading-snug backdrop-blur-sm before:hidden sm:rounded-full sm:text-[0.8125rem] sm:before:block"
         >
           Vastu Consultant in Pune &bull; Astrology &bull; Aura Healing
         </motion.span>
 
-        <h1 className="font-serif text-4xl leading-[1.12] text-ivory-50 sm:text-6xl lg:text-7xl">
+        <h1 className="font-serif text-[2.6rem] leading-[1.05] text-ivory-50 min-[400px]:text-5xl sm:text-7xl lg:text-8xl">
           {['Transform Your Space,', 'Energy & Destiny'].map((line, i) => (
             <motion.span
               key={line}
@@ -70,7 +70,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mt-7 max-w-xl text-balance text-base text-ivory-100/85 sm:text-lg"
+          className="mx-auto mt-8 max-w-xl text-balance text-lg text-ivory-100/85 sm:text-xl"
         >
           Creating Harmony, Prosperity &amp; Positive Energy Through Ancient Wisdom
         </motion.p>
@@ -79,17 +79,17 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.78, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Link
             to="/services"
-            className="w-full rounded-full border border-ivory-100/70 px-9 py-3.5 text-sm uppercase tracking-[0.16em] text-ivory-50 transition-colors hover:border-gold-300 hover:text-gold-300 sm:w-auto"
+            className="w-full rounded-full border border-ivory-100/30 bg-ivory-50/10 px-8 py-4 text-base font-semibold text-ivory-50 backdrop-blur-sm transition-all hover:-translate-y-0.5 hover:bg-ivory-50/20 sm:w-auto"
           >
             Explore Services
           </Link>
           <Link
             to="/contact"
-            className="btn-shine w-full rounded-full border border-gold-400 bg-gold-500 px-9 py-3.5 text-sm uppercase tracking-[0.16em] text-brown-900 transition-colors hover:bg-transparent hover:text-gold-300 sm:w-auto"
+            className="btn-shine w-full rounded-full bg-saffron-500 px-8 py-4 text-base font-semibold text-deep-900 shadow-lg shadow-saffron-500/25 transition-all hover:-translate-y-0.5 hover:bg-saffron-400 sm:w-auto"
           >
             Book a Consultation
           </Link>
@@ -101,7 +101,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 0.7 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="h-9 w-[1px] bg-gradient-to-b from-gold-300 to-transparent"
+          className="h-9 w-[1px] bg-gradient-to-b from-saffron-300 to-transparent"
           aria-hidden="true"
         />
       </div>
@@ -118,7 +118,7 @@ function HeroBackdrop() {
   const prefersReducedMotion = useReducedMotion()
 
   return (
-    <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_top,_var(--color-brown-700),_var(--color-brown-900)_70%)]">
+    <div className="relative h-full w-full bg-[radial-gradient(ellipse_at_top,_var(--color-deep-700),_var(--color-deep-900)_70%)]">
       {prefersReducedMotion ? (
         <img
           src="/images/hero-poster.jpg"

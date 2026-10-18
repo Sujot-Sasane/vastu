@@ -1,9 +1,10 @@
 export const contact = {
   brand: 'SUKH VASTU',
   tagline: 'Vastu • Astrology • Aura Healing',
-  phoneDisplay: '84212 64777',
-  phoneTel: '+918421264777',
-  whatsappNumber: '918421264777',
+  phoneDisplay: '70309 25038',
+  phoneTel: '+917030925038',
+  whatsappNumber: '917030925038',
+  email: 'prashant.r.mane@gmail.com',
   location: 'Pune, Maharashtra',
 }
 

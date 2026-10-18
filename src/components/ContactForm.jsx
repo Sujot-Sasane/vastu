@@ -90,12 +90,12 @@ Message: ${form.message}` : ''}`
 
         <button
           type="submit"
-          className="w-full rounded-full border border-gold-500 bg-brown-900 px-8 py-4 text-sm uppercase tracking-[0.16em] text-ivory-50 transition-colors hover:bg-gold-500 hover:text-brown-900 sm:w-auto"
+          className="w-full rounded-full bg-deep-900 px-8 py-4 text-base font-semibold text-ivory-50 shadow-lg shadow-deep-900/20 transition-all hover:-translate-y-0.5 hover:bg-deep-800 sm:w-auto"
         >
           Send on WhatsApp
         </button>
 
-        <p role="status" className="text-base text-brown-800">
+        <p role="status" className="text-base text-deep-800">
           {status === 'sent'
             ? `WhatsApp should now open with your details. You can also call us directly on ${contact.phoneDisplay}.`
             : ''}
@@ -106,12 +106,12 @@ Message: ${form.message}` : ''}`
 }
 
 const inputClasses =
-  'w-full rounded-sm border border-beige-300 bg-white/70 px-4 py-3 text-brown-900 placeholder:text-brown-700/40 focus:border-gold-500 focus:outline-none'
+  'w-full rounded-xl border border-beige-300 bg-ivory-50 px-4 py-3.5 text-deep-900 placeholder:text-deep-700/40 transition focus:border-saffron-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-saffron-200/60'
 
 function Field({ label, htmlFor, children }) {
   return (
     <div className="flex flex-col gap-2">
-      <label htmlFor={htmlFor} className="text-sm font-medium text-brown-900">
+      <label htmlFor={htmlFor} className="text-sm font-semibold text-deep-900">
         {label}
       </label>
       {children}

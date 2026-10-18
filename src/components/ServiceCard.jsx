@@ -19,14 +19,14 @@ export default function ServiceCard({ service, delay = 0 }) {
       <TiltCard>
       <Link
         to="/services#fees"
-        className="group flex h-full flex-col gap-4 rounded-md border border-beige-300 bg-ivory-50 p-7 transition-all hover:-translate-y-1 hover:border-gold-500 hover:shadow-lg"
+        className="card group flex h-full flex-col gap-4 p-8 transition-all hover:border-saffron-400 hover:shadow-xl"
       >
-        <span className="flex h-14 w-14 items-center justify-center rounded-full bg-brown-900 text-gold-300">
+        <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-deep-900 text-saffron-300 transition-colors group-hover:bg-saffron-500 group-hover:text-deep-900">
           <Icon className="h-8 w-8" />
         </span>
-        <h3 className="font-serif text-2xl text-brown-900">{service.name}</h3>
-        <p className="text-base leading-relaxed text-brown-800">{service.description}</p>
-        <span className="mt-auto text-base font-medium text-gold-700 group-hover:underline">
+        <h3 className="mt-2 font-serif text-2xl text-deep-900">{service.name}</h3>
+        <p className="text-base leading-relaxed text-deep-700">{service.description}</p>
+        <span className="mt-auto pt-2 text-base font-semibold text-saffron-700 transition-transform group-hover:translate-x-1">
           See fees &rarr;
         </span>
       </Link>

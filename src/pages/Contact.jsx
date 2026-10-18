@@ -9,27 +9,26 @@ export default function Contact() {
   return (
     <>
       <Seo path="/contact" />
-      <section className="relative overflow-hidden bg-brown-900 pb-20 pt-36 text-ivory-50 sm:pb-24 sm:pt-44">
-        <CompassMark className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 text-gold-300/25 sm:h-96 sm:w-96" />
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--color-deep-700),_var(--color-deep-900)_60%,_var(--color-ink))] pb-24 pt-40 text-ivory-50 sm:pb-28 sm:pt-48">
+        <CompassMark className="pointer-events-none absolute -left-16 -top-16 h-72 w-72 text-saffron-300/25 sm:h-96 sm:w-96" />
         <div className="relative mx-auto max-w-3xl px-6 text-center sm:px-8">
           <Reveal>
-            <span className="text-xs uppercase tracking-[0.3em] text-gold-300">Get In Touch</span>
-            <h1 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            <span className="eyebrow eyebrow-dark">Get In Touch</span>
+            <h1 className="mt-6 font-serif text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
               Begin Your Journey Towards Harmony
             </h1>
-            <div className="gold-rule mx-auto mt-6 w-16" />
           </Reveal>
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
+      <section className="py-24 sm:py-32">
         <div className="mx-auto grid max-w-6xl gap-16 px-6 sm:px-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
           <Reveal>
-            <div className="space-y-10">
+            <div className="space-y-4">
               <ContactBlock label="Call Us">
                 <a
                   href={`tel:${contact.phoneTel}`}
-                  className="font-serif text-2xl text-brown-900 transition-colors hover:text-gold-600"
+                  className="font-serif text-2xl text-deep-900 transition-colors hover:text-saffron-700"
                 >
                   {contact.phoneDisplay}
                 </a>
@@ -40,15 +39,24 @@ export default function Contact() {
                   href={`https://wa.me/${contact.whatsappNumber}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 font-serif text-2xl text-brown-900 transition-colors hover:text-gold-600"
+                  className="inline-flex items-center gap-2 font-serif text-2xl text-deep-900 transition-colors hover:text-saffron-700"
                 >
-                  <IconWhatsapp className="h-5 w-5 text-gold-600" />
+                  <IconWhatsapp className="h-5 w-5 text-saffron-600" />
                   {contact.phoneDisplay}
                 </a>
               </ContactBlock>
 
+              <ContactBlock label="Email">
+                <a
+                  href={`mailto:${contact.email}`}
+                  className="break-all font-serif text-xl text-deep-900 transition-colors hover:text-saffron-700 sm:text-2xl"
+                >
+                  {contact.email}
+                </a>
+              </ContactBlock>
+
               <ContactBlock label="Location">
-                <p className="font-serif text-2xl text-brown-900">{contact.location}</p>
+                <p className="font-serif text-2xl text-deep-900">{contact.location}</p>
               </ContactBlock>
 
               <div className="pt-4">
@@ -56,7 +64,7 @@ export default function Contact() {
                   href={`https://wa.me/${contact.whatsappNumber}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500 bg-brown-900 px-8 py-3.5 text-sm uppercase tracking-[0.16em] text-ivory-50 transition-colors hover:bg-gold-500 hover:text-brown-900"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-saffron-500 px-8 py-4 text-base font-semibold text-deep-900 shadow-lg shadow-saffron-500/25 transition-all hover:-translate-y-0.5 hover:bg-saffron-400"
                 >
                   Book a Consultation
                 </a>
@@ -65,9 +73,9 @@ export default function Contact() {
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="rounded-sm border border-beige-300/70 bg-white/50 p-7 sm:p-10">
-              <h2 className="font-serif text-2xl text-brown-900">Send Us a Message</h2>
-              <p className="mt-2 text-base text-brown-800">
+            <div className="card p-7 sm:p-10">
+              <h2 className="font-serif text-3xl text-deep-900">Send Us a Message</h2>
+              <p className="mt-2 text-base text-deep-700">
                 Fill in your details and your message opens in WhatsApp, ready to send.
               </p>
               <div className="mt-8">
@@ -83,9 +91,9 @@ export default function Contact() {
 
 function ContactBlock({ label, children }) {
   return (
-    <div>
-      <p className="text-sm font-semibold uppercase tracking-[0.15em] text-gold-700">{label}</p>
-      <div className="mt-2">{children}</div>
+    <div className="card px-6 py-5">
+      <p className="text-sm font-semibold text-saffron-700">{label}</p>
+      <div className="mt-1">{children}</div>
     </div>
   )
 }

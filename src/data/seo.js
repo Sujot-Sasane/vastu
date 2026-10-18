@@ -14,7 +14,7 @@ export const pages = {
   '/': {
     title: 'Vastu Consultant in Pune | SUKH VASTU – Vastu, Astrology & Aura Healing',
     description:
-      'SUKH VASTU – Vastu consultant in Pune for homes, offices & factories. Vastu Shastra, Kundli astrology, numerology, aura scanning & chakra balancing. Call 84212 64777.',
+      'SUKH VASTU – Vastu consultant in Pune for homes, offices & factories. Vastu Shastra, Kundli astrology, numerology, aura scanning & chakra balancing. Call 70309 25038.',
   },
   '/services': {
     title: 'Vastu, Astrology & Numerology Fees in Pune | SUKH VASTU',
@@ -22,9 +22,9 @@ export const pages = {
       'Transparent fees: residential Vastu from Rs. 20,000, commercial Vastu, Kundli analysis Rs. 5,000, aura scanning Rs. 5,100, combo packages & Vastu certification courses in Pune.',
   },
   '/contact': {
-    title: 'Book a Vastu Consultation in Pune | Call or WhatsApp 84212 64777',
+    title: 'Book a Vastu Consultation in Pune | Call or WhatsApp 70309 25038',
     description:
-      'Book your Vastu, astrology or aura healing consultation with SUKH VASTU, Pune. Call or WhatsApp 84212 64777 and get practical guidance for your home or business.',
+      'Book your Vastu, astrology or aura healing consultation with SUKH VASTU, Pune. Call or WhatsApp 70309 25038 and get practical guidance for your home or business.',
   },
 }
 
@@ -40,7 +40,9 @@ const business = {
   description: pages['/'].description,
   url: siteUrl,
   telephone: contact.phoneTel,
+  email: contact.email,
   image: `${siteUrl}/og-image.png`,
+  logo: `${siteUrl}/images/logo-mark.png`,
   priceRange: 'Rs. 1,100 - Rs. 1,85,000',
   address: {
     '@type': 'PostalAddress',

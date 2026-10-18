@@ -5,21 +5,21 @@ export default function SectionHeading({
   title,
   subtitle,
   align = 'center',
+  dark = false,
   className = '',
 }) {
   const alignment = align === 'left' ? 'items-start text-left' : 'items-center text-center'
 
   return (
-    <Reveal className={`flex flex-col gap-4 ${alignment} ${className}`}>
+    <Reveal className={`flex flex-col gap-5 ${alignment} ${className}`}>
       {eyebrow && (
-        <span className="text-sm font-semibold uppercase tracking-[0.2em] text-gold-700">{eyebrow}</span>
+        <span className={`eyebrow ${dark ? 'eyebrow-dark' : ''}`}>{eyebrow}</span>
       )}
-      <h2 className="text-balance font-serif text-3xl leading-tight text-brown-900 sm:text-4xl lg:text-5xl">
+      <h2 className="text-balance font-serif text-4xl leading-[1.1] text-deep-900 sm:text-5xl lg:text-[3.5rem]">
         {title}
       </h2>
-      <div className="gold-rule w-16" />
       {subtitle && (
-        <p className="max-w-2xl text-balance text-base text-brown-800 sm:text-lg">
+        <p className="max-w-2xl text-balance text-lg leading-relaxed text-deep-700 sm:text-xl">
           {subtitle}
         </p>
       )}

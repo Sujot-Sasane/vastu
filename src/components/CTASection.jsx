@@ -8,11 +8,11 @@ export default function CTASection({
   to = '/contact',
 }) {
   return (
-    <section className="relative overflow-hidden bg-brown-900 py-24 sm:py-32">
-      <MandalaRings className="pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[140%] -translate-x-1/2 -translate-y-1/2 text-gold-400/70" />
+    <section className="relative overflow-hidden bg-deep-900 py-28 sm:py-36">
+      <MandalaRings className="pointer-events-none absolute left-1/2 top-1/2 h-[140%] w-[140%] -translate-x-1/2 -translate-y-1/2 text-saffron-400/40" />
       <div className="relative mx-auto max-w-4xl px-6 text-center">
         <Reveal>
-          <h2 className="font-serif text-3xl leading-tight text-ivory-50 sm:text-5xl">
+          <h2 className="font-serif text-4xl leading-[1.1] text-ivory-50 sm:text-6xl">
             {lines.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -20,10 +20,10 @@ export default function CTASection({
             ))}
           </h2>
         </Reveal>
-        <Reveal delay={0.15} className="mt-10">
+        <Reveal delay={0.15} className="mt-12">
           <Link
             to={to}
-            className="inline-block rounded-full border border-gold-400 bg-gold-500 px-10 py-4 text-sm uppercase tracking-[0.16em] text-brown-900 transition-colors hover:bg-transparent hover:text-gold-300"
+            className="btn-shine inline-block rounded-full bg-saffron-500 px-8 py-4 text-base font-semibold text-deep-900 shadow-lg shadow-saffron-500/25 transition-all hover:-translate-y-0.5 hover:bg-saffron-400"
           >
             {cta}
           </Link>

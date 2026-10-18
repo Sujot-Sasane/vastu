@@ -16,7 +16,7 @@ export default function GoldDust() {
       {specks.map((s, i) => (
         <span
           key={i}
-          className="absolute bottom-[-10px] rounded-full bg-gold-300 animate-rise"
+          className="absolute bottom-[-10px] rounded-full bg-saffron-300 animate-rise"
           style={{
             left: `${s.left}%`,
             width: s.size,

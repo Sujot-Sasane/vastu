@@ -15,18 +15,15 @@ export default function Services() {
   return (
     <>
       <Seo path="/services" />
-      <section className="relative overflow-hidden bg-brown-900 pb-20 pt-36 text-ivory-50 sm:pb-28 sm:pt-44">
-        <CompassMark className="pointer-events-none absolute -right-20 -top-10 h-72 w-72 text-gold-300/25 sm:h-96 sm:w-96" />
+      <section className="relative overflow-hidden bg-[radial-gradient(ellipse_at_top,_var(--color-deep-700),_var(--color-deep-900)_60%,_var(--color-ink))] pb-24 pt-40 text-ivory-50 sm:pb-32 sm:pt-48">
+        <CompassMark className="pointer-events-none absolute -right-20 -top-10 h-72 w-72 text-saffron-300/25 sm:h-96 sm:w-96" />
         <div className="relative mx-auto max-w-4xl px-6 text-center sm:px-8">
           <Reveal>
-            <span className="text-xs uppercase tracking-[0.3em] text-gold-300">
-              Transparent &amp; Detailed
-            </span>
-            <h1 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl lg:text-6xl">
+            <span className="eyebrow eyebrow-dark">Transparent &amp; Detailed</span>
+            <h1 className="mt-6 font-serif text-4xl leading-[1.08] sm:text-6xl lg:text-7xl">
               Services &amp; Consultation Fees
             </h1>
-            <div className="gold-rule mx-auto mt-6 w-16" />
-            <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-ivory-100">
+            <p className="mx-auto mt-7 max-w-xl text-balance text-lg text-ivory-100/80 sm:text-xl">
               Clear, upfront fees for Vastu, astrology, numerology and aura healing in Pune. Each consultation is tailored to your space and situation.
             </p>
           </Reveal>
@@ -35,10 +32,10 @@ export default function Services() {
 
       <ServiceJumpNav />
 
-      <section id="fees" className="scroll-mt-32 py-20 sm:py-28">
+      <section id="fees" className="scroll-mt-40 py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHeading eyebrow="Fees" title="Consultation Services & Fees" subtitle={disclaimer} />
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+          <div className="mt-16 grid gap-6 lg:grid-cols-2">
             {pricingSections.map((section, i) => (
               <div key={section.title} className={i === 0 ? 'lg:col-span-2' : ''}>
                 <PricingTable section={section} id={section.title.toLowerCase().replace(/[^a-z]+/g, '-')} />
@@ -48,7 +45,7 @@ export default function Services() {
         </div>
       </section>
 
-      <section id="packages" className="scroll-mt-32 bg-ivory-100 py-20 sm:py-28">
+      <section id="packages" className="scroll-mt-40 bg-ivory-100 py-24 sm:py-32">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
           <SectionHeading
             eyebrow="Curated for You"
@@ -63,8 +60,8 @@ export default function Services() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
-        <div id="training" className="mx-auto max-w-6xl scroll-mt-32 px-5 sm:px-8">
+      <section className="py-24 sm:py-32">
+        <div id="training" className="mx-auto max-w-6xl scroll-mt-40 px-5 sm:px-8">
           <SectionHeading
             eyebrow="Learn With Us"
             title="Certification Programs"
@@ -76,7 +73,7 @@ export default function Services() {
             ))}
           </div>
           <Reveal className="mt-8 text-center">
-            <p className="text-base italic text-brown-800">{certificationNote}</p>
+            <p className="text-base italic text-deep-700">{certificationNote}</p>
           </Reveal>
         </div>
       </section>
