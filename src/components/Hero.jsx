@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { CompassMark, VastuGrid } from './VastuMotif'
+import GoldDust from './GoldDust'
 
 export default function Hero() {
   const sectionRef = useRef(null)
@@ -34,6 +35,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
+      <GoldDust />
       <CompassMark className="pointer-events-none absolute -right-16 top-1/4 h-64 w-64 text-gold-300/40 sm:h-80 sm:w-80" />
       <VastuGrid className="pointer-events-none absolute -left-24 bottom-0 h-72 w-72 text-gold-300/25 sm:h-96 sm:w-96" />
 
@@ -47,7 +49,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           className="mb-6 inline-block text-xs uppercase tracking-[0.35em] text-gold-300"
         >
-          Vastu &bull; Astrology &bull; Aura Healing
+          Vastu Consultant in Pune &bull; Astrology &bull; Aura Healing
         </motion.span>
 
         <h1 className="font-serif text-4xl leading-[1.12] text-ivory-50 sm:text-6xl lg:text-7xl">
@@ -57,7 +59,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.25 + i * 0.14, ease: [0.22, 1, 0.36, 1] }}
-              className="block"
+              className={`block ${i === 1 ? 'text-shimmer' : ''}`}
             >
               {line}
             </motion.span>
@@ -87,7 +89,7 @@ export default function Hero() {
           </Link>
           <Link
             to="/contact"
-            className="w-full rounded-full border border-gold-400 bg-gold-500 px-9 py-3.5 text-sm uppercase tracking-[0.16em] text-brown-900 transition-colors hover:bg-transparent hover:text-gold-300 sm:w-auto"
+            className="btn-shine w-full rounded-full border border-gold-400 bg-gold-500 px-9 py-3.5 text-sm uppercase tracking-[0.16em] text-brown-900 transition-colors hover:bg-transparent hover:text-gold-300 sm:w-auto"
           >
             Book a Consultation
           </Link>
